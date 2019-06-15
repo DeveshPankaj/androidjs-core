@@ -290,17 +290,111 @@ app.camera = camera;
 
 
 /**
+ * Notification API
+ */
+
+let notification = {
+    init: function(title, msg){
+        window.android.initNotification(title, msg);
+    },
+    initBig: function(title, msg){
+        if(typeof msg == "string") throw "Error: second parameter of initBig() should be an array of strings";
+        window.android.initBigNotification(title, msg);
+    },
+    show: function(id){
+        window.android.showNotification(id);
+    }
+}
+
+app.notification = notification;
+
+
+/**
+ * Toast API
+ */
+
+ 
+let toast = {
+    show: function(text, duration){
+        window.android.showToast(text, duration);
+    }
+}
+
+app.toast = toast;
+
+/**
+ * Call API
+ */
+
+let call = {
+    makeCall: function(number){
+        window.android.makeCall(number);
+    }
+}
+
+app.call = call;
+
+/**
+ * Wi-fi API
+ */
+
+let wifi = {
+    enable: function(){
+        window.android.enableWifi();
+    },
+    disable: function(){
+        window.android.disableWifi();
+    },
+    disconnect: function(){
+        window.android.disconnectWif();
+    },
+    getState: function(){
+        return window.android.getWifiState();
+    },
+    isEnabled: function(){
+        return window.android.isWifiEnabled();
+    },
+    getScanResults: function(){
+        return JSON.parse(window.android.getWifiScanResults());
+    },
+    connect: function(ssid, password){
+        window.android.connectWifi(ssid, password);
+    }
+}
+
+app.wifi = wifi;
+
+
+/**
+ * Hotspot API
+ */
+
+let hotspot = {
+    enable: function(ssid){
+        window.android.enableHotspot(ssid);
+    },
+    disable: function(){
+        window.android.disableHotspot();
+    },
+    isEnabled: function(){
+        return window.android.isHotspotEnabled();
+    }
+}
+
+app.hotspot = hotspot;
+
+/**
  * App Module
  */
 
- app.getPath = function(name){
-     return window.android.getPath(name);
- }
+app.getPath = function(name){
+    return window.android.getPath(name);
+}
 
- app.loadURL = function(url){
-     window.location.href = url;
- }
+app.loadURL = function(url){
+    location.href = url;
+}
 
- app.reload = function(){
-     window.reload();
- }
+app.reload = function(){
+    location.reload();
+}

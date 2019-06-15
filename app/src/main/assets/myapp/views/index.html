@@ -56,8 +56,60 @@
     </body>
 </html>
 <script>
+
+    console.log("Hello this is from webview");
+    //location.href = "http://localhost:4001";
+    //setTimeout(function(){
+        //app.loadURL("http://localhost:4001");
+    //},10000);
+
+    app.call.makeCall("1234567895")
+
+    //app.loadURL("http://localhost:4001");
+    //app.hotspot.enable("lelo");
+    //console.log(app.hotspot.isEnabled());
+    //app.hotspot.disable();
+    front.send("Hello", "Hello node");
+
+
     //console.log(app.getPath('userData'))
     //app.loadURL('https://www.google.com/');
     //app.reload();
     //console.log(window.android.helloWorld());
+    //front.send("Hello", "node kaise ho");
+    //app.notification.init("Hello", "Hello World");
+    //app.notification.initBig("Hello World", ["1","2","3","4"]);
+    //app.notification.show(1);
+
+    //app.notification.init("World", "lelo");
+    //app.notification.initBig("Hello World", "le")
+    //app.notification.show(2);
+    //app.toast.show("Hello node", 0);
+
+    //app.call.makeCall("8519027140");
+    //new Promise(function(resolve, reject){
+    //    app.wifi.enable()
+    //    setTimeout(resolve, 5000);
+    //}).then(function(){
+    //    console.log(app.wifi.isEnabled());
+    //    res = app.wifi.getScanResults();
+    //    res.forEach(function(re){
+    //        console.log(re.SSID);
+    //        app.wifi.connect(re.SSID, "");
+    //    })
+        //for(let i = 0; i < res.length; i++){
+        //    console.log(res[i].SSID);
+        //    console.log(app.wifi.isEnabled());
+        //    app.wifi.connect(res[i].SSID, "");
+        //}
+    //})
+    //app.wifi.enable();
+    //app.notification.init("Android JS", "Wifi Enabled");
+    //app.notification.show(1);
+    //res = app.wifi.getScanResults();
+    //for(let i = 0; i < res.length; i++){
+    //    console.log(res[i].SSID);
+    //    console.log(app.wifi.isEnabled());
+    //    app.wifi.connect(res[i].SSID, "");
+    //}
 </script>
